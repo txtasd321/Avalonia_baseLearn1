@@ -1,0 +1,77 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="baseLearn1.MainWindow"
+        Title="baseLearn1">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+        
+        <!-- 标题栏  -->
+        <Grid Grid.Row="0" Background="Orange" Height="40" ColumnDefinitions="Auto, Auto, *, Auto, Auto">
+            <Rectangle Grid.Column="0" Fill="Blue" Width="40"></Rectangle>
+            <Rectangle Grid.Column="1" Fill="White" Width="40"></Rectangle>
+            <StackPanel 
+                Grid.Column="2" 
+                Orientation="Horizontal" 
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center">
+                    <Label FontWeight="Black">AVALONIA</Label>
+                    <Label>LOUDNESS METER</Label>
+            </StackPanel>
+            <Rectangle Grid.Column="3" Fill="Green" Width="40"></Rectangle>
+            <Rectangle Grid.Column="4" Fill="Yellow" Width="40"></Rectangle>
+        </Grid>
+        
+        <!-- 主视图  -->
+        <Grid Grid.Row="1" Background="#1a1c20" ColumnDefinitions="Auto,Auto,*">
+            
+            <!-- 左侧上升动态进度条 Bar -->
+            <Grid Grid.Column="0" Width="150" RowDefinitions="*, Auto, Auto" Margin="0,20">
+                <Grid Grid.Row="0"></Grid>
+                <Label 
+                    Grid.Row="1" Foreground="White" FontSize="20" HorizontalAlignment="Center" Margin="5">LUFS</Label>
+                
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel.Styles>
+                        <Style Selector="Button">
+                            <Setter Property="FontSize" Value="12"></Setter>
+                            <Setter Property="FontWeight" Value="Bold"></Setter>
+                            <Setter Property="Foreground" Value="White"></Setter>
+                            <Setter Property="Background" Value="#7f98c7"></Setter>
+                            <Setter Property="CornerRadius" Value="20"></Setter>
+                            <!-- 设置按钮的圆角 -->
+                            <Setter Property="Padding" Value="7,2"></Setter>
+                        </Style>
+                    </StackPanel.Styles>
+                    <Button Margin="0,0,20,0">A</Button>
+                    <Button>INT-LRA</Button>
+                </StackPanel>
+            </Grid>
+            
+            <!-- 中间区域 Panel -->
+            <Rectangle Grid.Column="1" Fill="#ccc" Width="140"></Rectangle>
+            
+            <!-- 右侧波形区 -->
+            <Rectangle Grid.Column="2" Fill="Black" ></Rectangle>
+            
+        </Grid>
+        
+        <!-- 底部状态栏  -->
+        <Grid Grid.Row="2" Margin="8" ColumnDefinitions="Auto,Auto,*,Auto,Auto,Auto,Auto">
+            <Button Grid.Column="0" Margin="0,0,8,0">Steree</Button>
+            <Button Grid.Column="1" Margin="0,0,8,0">Youtube</Button>
+            
+            <Button Grid.Column="3" Margin="0,0,8,0">10SEC</Button>
+            
+            <Button Grid.Column="4" Margin="0,0,8,0">CONTINUOUS</Button>
+            <Rectangle Grid.Column="5" Fill="Orange"  Width="30" Margin="0,0,8,0"></Rectangle>
+            <Rectangle Grid.Column="6" Fill="Red" Width="30"></Rectangle>
+            
+            
+            
+        </Grid>
+        
+    </Grid>
+</Window>
