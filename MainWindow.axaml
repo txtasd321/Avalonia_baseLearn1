@@ -28,26 +28,84 @@
         <Grid Grid.Row="1" Background="#1a1c20" ColumnDefinitions="Auto,Auto,*">
             
             <!-- 左侧上升动态进度条 Bar -->
-            <Grid Grid.Column="0" Width="150" RowDefinitions="*, Auto, Auto" Margin="0,20">
-                <Grid Grid.Row="0"></Grid>
-                <Label 
-                    Grid.Row="1" Foreground="White" FontSize="20" HorizontalAlignment="Center" Margin="5">LUFS</Label>
+            <Grid Grid.Column="0" Width="150" RowDefinitions=" *,Auto, Auto" Margin="5,20">
+                <Grid Grid.Row="0" 
+                      RowDefinitions="3*,3*,3*,9*,5*,4*,9*,9*,9*,6*,Auto"
+                      ColumnDefinitions="Auto,*,Auto,Auto">
+                    <Grid.Styles>
+                        <Style Selector="Label">
+                            <Setter Property="Foreground" Value="White"></Setter>
+                            <Setter Property="FontSize" Value="12"></Setter>
+                            <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+                            <Setter Property="Padding" Value="0"></Setter>
+                        </Style>
+                    </Grid.Styles>
+                    
+                    <Label Grid.Row="0" Grid.Column="0">0 -</Label>
+                    <Label Grid.Row="1" Grid.Column="0">-3 -</Label>
+                    <Label Grid.Row="2" Grid.Column="0">-6 -</Label>
+                    <Label Grid.Row="3" Grid.Column="0">-9 -</Label>
+                    <Label Grid.Row="4" Grid.Column="0">-18 -</Label>
+                    <Label Grid.Row="5" Grid.Column="0">-23 -</Label>
+                    <Label Grid.Row="6" Grid.Column="0">-27 -</Label>
+                    <Label Grid.Row="7" Grid.Column="0">-36 -</Label>
+                    <Label Grid.Row="8" Grid.Column="0">-45 -</Label>
+                    <Label Grid.Row="9" Grid.Column="0">-54 -</Label>
+                    <Label Grid.Row="10" Grid.Column="0"></Label>
+                    
+                    <Grid Grid.Row="0" Column="1" Grid.RowSpan="11" Width="20" RowDefinitions="23*, 37*">
+                        <Rectangle Grid.Row="0"  Grid.RowSpan="2" Margin="0,8,0,-8" Fill="#b05c4e" Width="20" ></Rectangle>
+                        <Rectangle  Grid.Row="1" Fill="White" Margin="0,8,0,-8" Width="20" ></Rectangle>
+                        
+                    
+                        
+                        
+                    </Grid>
+                    
+                    <Label Grid.Row="0" Grid.Column="2">-</Label>
+                    <Label Grid.Row="1" Grid.Column="2">-</Label>
+                    <Label Grid.Row="2" Grid.Column="2">-</Label>
+                    <Label Grid.Row="3" Grid.Column="2">-</Label>
+                    <Label Grid.Row="4" Grid.Column="2">-</Label>
+                    <Label Grid.Row="5" Grid.Column="2">-</Label>
+                    <Label Grid.Row="6" Grid.Column="2">-</Label>
+                    <Label Grid.Row="7" Grid.Column="2">-</Label>
+                    <Label Grid.Row="8" Grid.Column="2">-</Label>
+                    <Label Grid.Row="9" Grid.Column="2">-</Label>
+                    <Label Grid.Row="10" Grid.Column="2"></Label>
+                    
                 
+
+                    <Canvas Grid.Row="0" Grid.Column="3" Grid.RowSpan="11" Width="20">
+                        <Rectangle Canvas.Top="0" Fill="White" Width="20" Height="20"></Rectangle>
+                    </Canvas>
+                    
+                </Grid>
+                
+                <!-- 音量条文本 -->
+                <Label Grid.Row="1" Foreground="White" FontSize="20" HorizontalAlignment="Center" Margin="5,20,5,0">LUFS</Label>
+                    
+                <!-- 音量调按钮 -->
                 <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                    
                     <StackPanel.Styles>
                         <Style Selector="Button">
                             <Setter Property="FontSize" Value="12"></Setter>
                             <Setter Property="FontWeight" Value="Bold"></Setter>
                             <Setter Property="Foreground" Value="White"></Setter>
                             <Setter Property="Background" Value="#7f98c7"></Setter>
-                            <Setter Property="CornerRadius" Value="20"></Setter>
                             <!-- 设置按钮的圆角 -->
+                            <Setter Property="CornerRadius" Value="20"></Setter>
+                            
                             <Setter Property="Padding" Value="7,2"></Setter>
                         </Style>
                     </StackPanel.Styles>
+                    
                     <Button Margin="0,0,20,0">A</Button>
                     <Button>INT-LRA</Button>
+                    
                 </StackPanel>
+                
             </Grid>
             
             <!-- 中间区域 Panel -->
